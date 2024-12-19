@@ -77,6 +77,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--colors-base-white-100);
 }
 
 .wrapper {
@@ -95,6 +96,12 @@ body {
 }
 .wrapper > * {
   min-width: 0;
+}
+
+.div {
+  width: 300px;
+  height: 300px;
+  background-color: var(--colors-dark-100);
 }
 
 [class*=_icon-]::before {
@@ -222,25 +229,11 @@ body {
   --colors-light-40: #f8f7f6;
   --colors-light-60: #f5f3f1;
   --colors-light-80: #f2efed;
-  /* number */
-  --fonts-size-10: 0.625rem;
-  --fonts-size-12: 0.75rem;
-  --fonts-size-14: 0.875rem;
-  --fonts-size-16: 1rem;
-  --fonts-size-20: 1.25rem;
-  --fonts-size-25: 1.5625rem;
-  --fonts-size-32: 2rem;
-  --fonts-size-40: 2.5rem;
-  --fonts-size-64: 4rem;
-  /* string */
-  --fonts-family-poppins: poppins;
-  --fonts-weight-bold: bold;
-  --fonts-weight-light: light;
-  --fonts-weight-medium: medium;
-  --fonts-weight-regular: regular;
-  --fonts-weight-semibold: semibold;
-  /* dark */
-  /* color */
+}
+
+/* dark */
+/* color */
+.dark-theme {
   --colors-base-black-100: #ffffff;
   --colors-base-white-100: #000000;
   --colors-dark-100: #d0d0d0;
@@ -263,23 +256,6 @@ body {
   --colors-light-40: #f2efed;
   --colors-light-60: #f5f3f1;
   --colors-light-80: #f8f7f6;
-  /* number */
-  --fonts-size-10: 0.625rem;
-  --fonts-size-12: 0.75rem;
-  --fonts-size-14: 0.875rem;
-  --fonts-size-16: 1rem;
-  --fonts-size-20: 1.25rem;
-  --fonts-size-25: 1.5625rem;
-  --fonts-size-32: 2rem;
-  --fonts-size-40: 2.5rem;
-  --fonts-size-64: 4rem;
-  /* string */
-  --fonts-family-poppins: poppins;
-  --fonts-weight-bold: bold;
-  --fonts-weight-light: light;
-  --fonts-weight-medium: medium;
-  --fonts-weight-regular: regular;
-  --fonts-weight-semibold: semibold;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
