@@ -1,0 +1,16 @@
+@import 'global/typography';
+@import 'global/variables';
+@import 'global/base';
+@import 'global/icons';
+@import 'global/colors';
+@import 'global/reset';
+@import 'global/buttons';
+@import 'global/links';
+@import 'global/common';
+
+@import 'blocks/header';
+@import 'blocks/footer';
+
+.text {
+	font-family: 'Poppins', sans-serif;
+}
