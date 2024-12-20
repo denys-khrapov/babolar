@@ -1,0 +1,24 @@
+.btn {
+  font-family: $fontFamily;
+  color: var(--colors-dark-20);
+  font-size: var(--fonts-size-12);
+  background: var(--colors-dark-brown-100);
+  border: 1.5px solid transparent;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.4s;
+  padding: 14px 8px;
+  &:hover {
+    border-color: var(--colors-dark-beige-100);
+    background: var(--colors-dark-brown-80);
+  }
+  &:active {
+    background: var(--colors-dark-100);
+    border-color: transparent;
+  }
+}

@@ -8,9 +8,9 @@
 @import 'global/links';
 @import 'global/common';
 
+@import 'blocks/notification';
 @import 'blocks/header';
+@import 'blocks/two-block';
 @import 'blocks/footer';
 
-.text {
-	font-family: 'Poppins', sans-serif;
-}
+
