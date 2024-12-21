@@ -8,9 +8,6 @@
     padding: 0;
   }
 
-  &__logo-box {
-  }
-
   &__logo {
     font-size: 0;
     img {
@@ -26,9 +23,6 @@
       min-width: 200px;
       height: auto;
     }
-  }
-
-  &__theme-toggles {
   }
 
   &__menu {
@@ -162,9 +156,10 @@
   }
 }
 .menu {
-  list-style: none;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  list-style: none;
   row-gap: 16px;
 }
 .menu-item {
@@ -178,7 +173,7 @@
     text-decoration: none;
     outline: none;
     transition: all 0.4s;
-    padding: 18px 16px;
+    padding: 17px 16px;
     border-radius: 4px;
     border: 1.5px solid transparent;
     &:hover {

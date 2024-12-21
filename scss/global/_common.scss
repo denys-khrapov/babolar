@@ -50,6 +50,7 @@
     }
   }
 }
+
 .social-icons {
   display: flex;
   justify-content: center;
@@ -76,6 +77,7 @@
     }
   }
 }
+
 .theme-toggle {
   &.light,
   &.dark {
@@ -127,6 +129,7 @@ html.dark-theme {
 .logo-black {
   display: block;
 }
+
 .logo-white {
   display: none;
 }

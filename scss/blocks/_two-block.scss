@@ -3,9 +3,6 @@
   @media (min-width:$pc){
     padding: 96px 0;
   }
-  &__container {
-  }
-
   &__row {
     display: flex;
     flex-wrap: wrap;
@@ -14,9 +11,6 @@
     @media (min-width: $pc) {
       gap: 48px;
     }
-  }
-
-  &__box {
   }
 }
 

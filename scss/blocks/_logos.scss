@@ -3,12 +3,6 @@
   @media (min-width: $pc) {
     padding: 96px 0;
   }
-  &__container {
-    max-width: 800px;
-    @media (min-width: $pc) {
-      max-width: 1608px;
-    }
-  }
 
   &__title {
     color: var(--colors-dark-100);

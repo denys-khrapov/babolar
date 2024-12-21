@@ -31,6 +31,7 @@ body {
 	@media (min-width: $pc) {
 		width: 100%;
 		max-width: $containerWidth;
+		padding: 0 72px;
 	}
 }
 
