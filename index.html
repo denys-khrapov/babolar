@@ -1,342 +1,706 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="img/favico.svg" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Babolar</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <div
-        class="notification"
-        style="background-image: url(img/notification-img.png)"
-      >
-        <div class="notification__left-col">
-          <div class="notification__text-box _icon-alert">
-            <h4 class="notification__title">
-              Hurry Up! Limited-Time Discount!
-            </h4>
-            <div class="notification__text-holder">
-              <p>
-                Take advantage of our exclusive discounts on bespoke furniture.
-                This offer is only available for a short time, so act now to
-                transform your space with custom designs!
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="notification__right-col">
-          <a class="btn" href="#">Claim Your Discount</a>
-          <button class="notification__close _icon-close-right">close</button>
-        </div>
-      </div>
-      <header class="header">
-        <div class="container">
-          <div class="header__row">
-            <div class="header__left-col">
-              <div class="header__logo-box">
-                <a class="header__logo" href="/">
-                  <img
-                    class="logo-white"
-                    src="img/logo-white.svg"
-                    width="100"
-                    height="14"
-                    alt="babolar logo white"
-                  />
-                  <img
-                    class="logo-black"
-                    src="img/logo-black.svg"
-                    width="100"
-                    height="14"
-                    alt="babolar logo white"
-                  />
-                </a>
-              </div>
-              <div class="header__theme-toggles">
-                <button class="theme-toggle light active _icon-light-theme">
-                  Light
-                </button>
-                <button class="theme-toggle dark _icon-dark-theme">Dark</button>
-              </div>
-            </div>
-            <div class="header__right-col">
-              <a class="btn _icon-message" href="#"
-                ><span>Get in touch</span></a
-              >
-              <div class="menu-burger _icon-burger">
-                <span>Menu</span>
-              </div>
-              <div class="header__menu">
-                <div class="menu-close _icon-close"></div>
-                <ul id="menu-main-menu" class="menu">
-                  <li class="menu-item">
-                    <a href="/">About us</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="/">Products</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="/">Projects</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="/">Contact</a>
-                  </li>
-                </ul>
-                <div class="header__contact contact-info">
-                  <div class="contact-info__box">
-                    <h4 class="contact-info__subtitle">Contact us</h4>
-                    <h3 class="contact-info__title">Babolar ® Head Office</h3>
-                    <a
-                      href="https://maps.app.goo.gl/nyUR7QpUNdXeuoYs9"
-                      target="_blank"
-                      >206-188 Fairview Mall Dr Toronto, ON M2J 0H7</a
-                    >
-                  </div>
-                  <div class="contact-info__box">
-                    <h4 class="contact-info__subtitle">phone</h4>
-                    <a href="tel:+16475634643">+1 (647) 563 46 43</a>
-                  </div>
-                  <div class="contact-info__box">
-                    <h4 class="contact-info__subtitle">email</h4>
-                    <a href="mailto:order@babolar.ca">order@babolar.ca</a>
-                  </div>
-                  <div class="social-icons">
-                    <a class="social-icons__facebook _icon-facebook" href="/"
-                      >facebook</a
-                    >
-                    <a class="social-icons__linkedin _icon-linkedin" href="/"
-                      >linkedin</a
-                    >
-                    <a class="social-icons__instagram _icon-instagram" href="/"
-                      >instagram</a
-                    >
-                    <a class="social-icons__youtube _icon-youtube" href="/"
-                      >youtube</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-      <main class="page">
-        <section class="two-block" id="two-block-section">
-          <div class="two-block__container container">
-            <div class="two-block__row">
-              <div class="two-block__box box-two-block">
-                <div class="box-two-block__bg-holder">
-                  <img
-                    src="img/two-block-1.jpg"
-                    width="1480"
-                    height="376"
-                    alt="Creation
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/x-icon" href="img/favico.svg" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+		/>
+
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Babolar</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div
+				class="notification"
+				style="background-image: url(img/notification-img.png)"
+			>
+				<div class="notification__left-col">
+					<div class="notification__text-box _icon-alert">
+						<h4 class="notification__title">
+							Hurry Up! Limited-Time Discount!
+						</h4>
+						<div class="notification__text-holder">
+							<p>
+								Take advantage of our exclusive discounts on bespoke furniture.
+								This offer is only available for a short time, so act now to
+								transform your space with custom designs!
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="notification__right-col">
+					<a class="btn" href="#">Claim Your Discount</a>
+					<button class="notification__close _icon-close-right">close</button>
+				</div>
+			</div>
+			<header class="header">
+				<div class="container">
+					<div class="header__row">
+						<div class="header__left-col">
+							<div class="header__logo-box">
+								<a class="header__logo" href="/">
+									<img
+										class="logo-white"
+										src="img/logo-white.svg"
+										width="100"
+										height="14"
+										alt="babolar logo white"
+									/>
+									<img
+										class="logo-black"
+										src="img/logo-black.svg"
+										width="100"
+										height="14"
+										alt="babolar logo white"
+									/>
+								</a>
+							</div>
+							<div class="header__theme-toggles">
+								<button class="theme-toggle light active _icon-light-theme">
+									Light
+								</button>
+								<button class="theme-toggle dark _icon-dark-theme">Dark</button>
+							</div>
+						</div>
+						<div class="header__right-col">
+							<a class="btn _icon-message" href="#"
+								><span>Get in touch</span></a
+							>
+							<div class="menu-burger _icon-burger">
+								<span>Menu</span>
+							</div>
+							<div class="header__menu">
+								<div class="menu-close _icon-close"></div>
+								<ul id="menu-main-menu" class="menu">
+									<li class="menu-item">
+										<a href="/">About us</a>
+									</li>
+									<li class="menu-item">
+										<a href="/">Products</a>
+									</li>
+									<li class="menu-item">
+										<a href="/">Projects</a>
+									</li>
+									<li class="menu-item">
+										<a href="/">Contact</a>
+									</li>
+								</ul>
+								<div class="header__contact contact-info">
+									<div class="contact-info__box">
+										<h4 class="contact-info__subtitle">Contact us</h4>
+										<h3 class="contact-info__title">Babolar ® Head Office</h3>
+										<a
+											href="https://maps.app.goo.gl/nyUR7QpUNdXeuoYs9"
+											target="_blank"
+											>206-188 Fairview Mall Dr Toronto, ON M2J 0H7</a
+										>
+									</div>
+									<div class="contact-info__box">
+										<h4 class="contact-info__subtitle">phone</h4>
+										<a href="tel:+16475634643">+1 (647) 563 46 43</a>
+									</div>
+									<div class="contact-info__box">
+										<h4 class="contact-info__subtitle">email</h4>
+										<a href="mailto:order@babolar.ca">order@babolar.ca</a>
+									</div>
+									<div class="social-icons">
+										<a class="social-icons__facebook _icon-facebook" href="/"
+											>facebook</a
+										>
+										<a class="social-icons__linkedin _icon-linkedin" href="/"
+											>linkedin</a
+										>
+										<a class="social-icons__instagram _icon-instagram" href="/"
+											>instagram</a
+										>
+										<a class="social-icons__youtube _icon-youtube" href="/"
+											>youtube</a
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<section class="two-block" id="two-block-section">
+					<div class="two-block__container container">
+						<div class="two-block__row">
+							<div class="two-block__box box-two-block">
+								<div class="box-two-block__bg-holder">
+									<img
+										src="img/two-block-1.jpg"
+										width="1480"
+										height="376"
+										alt="Creation
                   of Design Projects"
-                  />
-                </div>
-                <h3 class="box-two-block__title">
-                  Creation of Design Projects
-                </h3>
-                <div class="box-two-block__text-holder">
-                  <p>
-                    We create bespoke design projects from concept to
-                    completion, tailored to your lifestyle and preferences. From
-                    layout planning to material selection and implementation,
-                    every detail is carefully crafted to ensure a unique,
-                    functional, and timeless design.
-                  </p>
-                </div>
-              </div>
-              <div class="two-block__box box-two-block">
-                <div class="box-two-block__bg-holder">
-                  <img
-                    src="img/two-block-2.jpg"
-                    width="1480"
-                    height="376"
-                    alt="Unique Furniture Manufacturing"
-                  />
-                </div>
-                <h3 class="box-two-block__title">
-                  Unique Furniture Manufacturing
-                </h3>
-                <div class="box-two-block__text-holder">
-                  <p>
-                    Our renovation services transform private houses into
-                    elegant, functional spaces that reflect your individuality.
-                    Our renovation services transform private houses into
-                    elegant, functional spaces that reflect your individuality.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="logos" id="logos-section">
-          <div class="logos__container container">
-            <h3 class="logos__title">Our partners</h3>
-            <div class="logos__row">
-              <div class="logos__image-holder">
-                <img
-                  src="img/logos-1.svg"
-                  width="176"
-                  height="76"
-                  alt="logo company"
-                />
-              </div>
-              <div class="logos__image-holder">
-                <img
-                  src="img/logos-2.svg"
-                  width="176"
-                  height="76"
-                  alt="logo company"
-                />
-              </div>
-              <div class="logos__image-holder">
-                <img
-                  src="img/logos-3.svg"
-                  width="176"
-                  height="76"
-                  alt="logo company"
-                />
-              </div>
-              <div class="logos__image-holder">
-                <img
-                  src="img/logos-4.svg"
-                  width="176"
-                  height="76"
-                  alt="logo company"
-                />
-              </div>
-              <div class="logos__image-holder">
-                <img
-                  src="img/logos-5.svg"
-                  width="176"
-                  height="76"
-                  alt="logo company"
-                />
-              </div>
-              <div class="logos__image-holder">
-                <img
-                  src="img/logos-6.svg"
-                  width="176"
-                  height="76"
-                  alt="logo company"
-                />
-              </div>
-              <div class="logos__image-holder">
-                <img
-                  src="img/logos-7.svg"
-                  width="176"
-                  height="76"
-                  alt="logo company"
-                />
-              </div>
-              <div class="logos__image-holder">
-                <img
-                  src="img/logos-8.svg"
-                  width="176"
-                  height="76"
-                  alt="logo company"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <footer class="footer">
-        <div class="footer__container container">
-          <div class="footer__top">
-            <div class="footer__left-col">
-              <div class="footer__title-box">
-                <h3 class="footer__title">
-                  Bespoke architectural design tailored to your
-                  <span>unique lifestyle</span>
-                </h3>
-                <a class="btn" href="#">Get in touch</a>
-              </div>
-              <div class="footer__menu">
-                <ul id="menu-main-menu" class="menu">
-                  <li class="menu-item">
-                    <a href="/">About us</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="/">Products</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="/">Projects</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="/">Contact</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer__right-col">
-              <div class="footer__contact contact-info">
-                <div class="contact-info__box">
-                  <h4 class="contact-info__subtitle">Contact us</h4>
-                  <h3 class="contact-info__title">Babolar ® Head Office</h3>
-                  <a
-                    href="https://maps.app.goo.gl/nyUR7QpUNdXeuoYs9"
-                    target="_blank"
-                    >206-188 Fairview Mall Dr Toronto, ON M2J 0H7</a
-                  >
-                </div>
-                <div class="contact-info__box">
-                  <h4 class="contact-info__subtitle">phone</h4>
-                  <a href="tel:+16475634643">+1 (647) 563 46 43</a>
-                </div>
-                <div class="contact-info__box">
-                  <h4 class="contact-info__subtitle">email</h4>
-                  <a href="mailto:order@babolar.ca">order@babolar.ca</a>
-                </div>
-                <div class="social-icons">
-                  <a class="social-icons__facebook _icon-facebook" href="/"
-                    >facebook</a
-                  >
-                  <a class="social-icons__linkedin _icon-linkedin" href="/"
-                    >linkedin</a
-                  >
-                  <a class="social-icons__instagram _icon-instagram" href="/"
-                    >instagram</a
-                  >
-                  <a class="social-icons__youtube _icon-youtube" href="/"
-                    >youtube</a
-                  >
-                </div>
-              </div>
-              <div class="footer__map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.64463878332!2d-79.34390512330029!3d43.78023497109632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d2fa46993e39%3A0xf5ab2cf1e263845e!2zMTg4IEZhaXJ2aWV3IE1hbGwgRHIgIzIwNiwgVG9yb250bywgT04gTTJKIDBINywg0JrQsNC90LDQtNCw!5e0!3m2!1suk!2sro!4v1734734320247!5m2!1suk!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-            </div>
-          </div>
-          <div class="footer__bottom bottom-footer">
-            <div class="bottom-footer__left-col">
-              <div class="footer__copyright">
-                <p>© 2025 Babolar®. All content is available under the Creative Commons Attribution 4.0 International license unless otherwise noted.</p>
-              </div>
-            </div>
-            <div class="bottom-footer__right-col">
-              <div class="footer__additional-menu">
-                <ul id="additional-menu" class="menu">
-                  <li class="menu-item">
-                    <a href="/">Privacy Policy</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="/">Cookie Policy</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="/">Update cookie settings</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <script src="js/main.js"></script>
-  </body>
+									/>
+								</div>
+								<h3 class="box-two-block__title">
+									Creation of Design Projects
+								</h3>
+								<div class="box-two-block__text-holder">
+									<p>
+										We create bespoke design projects from concept to
+										completion, tailored to your lifestyle and preferences. From
+										layout planning to material selection and implementation,
+										every detail is carefully crafted to ensure a unique,
+										functional, and timeless design.
+									</p>
+								</div>
+							</div>
+							<div class="two-block__box box-two-block">
+								<div class="box-two-block__bg-holder">
+									<img
+										src="img/two-block-2.jpg"
+										width="1480"
+										height="376"
+										alt="Unique Furniture Manufacturing"
+									/>
+								</div>
+								<h3 class="box-two-block__title">
+									Unique Furniture Manufacturing
+								</h3>
+								<div class="box-two-block__text-holder">
+									<p>
+										Our renovation services transform private houses into
+										elegant, functional spaces that reflect your individuality.
+										Our renovation services transform private houses into
+										elegant, functional spaces that reflect your individuality.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="about" id="about-section">
+					<div class="about__container container">
+						<div class="about__content">
+							<div class="about__top">
+								<div class="about__title-box title-box">
+									<h2 class="title-box__title">About us</h2>
+									<div class="title-box__text-holder">
+										<p>
+											The Babolar company's work is centered around bespoke
+											design projects that combine a modern high-tech style with
+											the exclusive use of natural materials.
+										</p>
+										<p>
+											With attention to detail, impeccable craftsmanship, and a
+											commitment to quality, Babolar has become a recognized
+											leader in the world of renovation home.
+										</p>
+									</div>
+								</div>
+								<div class="about__video-holder">
+									<video
+										width="976"
+										height="476"
+										preload="auto"
+										autoplay
+										playsinline
+										loop
+										muted
+										id="myVideo"
+									>
+										<source src="img/placeholder.mp4" type="video/mp4" />
+									</video>
+									<button id="playButton" class="btn _icon-play">
+										Play now
+									</button>
+								</div>
+							</div>
+							<div class="about__bottom">
+								<div class="about__items">
+									<div class="about__item item-about">
+										<h3 class="item-about__title">Quality</h3>
+										<div class="item-about__bg-holder">
+											<img
+												src="img/about-1.jpg"
+												width="280"
+												height="176"
+												alt="Quality"
+											/>
+										</div>
+									</div>
+									<div class="about__item item-about">
+										<h3 class="item-about__title">Individuality</h3>
+										<div class="item-about__bg-holder">
+											<img
+												src="img/about-2.jpg"
+												width="280"
+												height="176"
+												alt="Quality"
+											/>
+										</div>
+									</div>
+									<div class="about__item item-about">
+										<h3 class="item-about__title">Innovation</h3>
+										<div class="item-about__bg-holder">
+											<img
+												src="img/about-3.jpg"
+												width="280"
+												height="176"
+												alt="Quality"
+											/>
+										</div>
+									</div>
+									<div class="about__item item-about">
+										<h3 class="item-about__title">
+											European materials and hardware
+										</h3>
+										<div class="item-about__bg-holder">
+											<img
+												src="img/about-4.jpg"
+												width="280"
+												height="176"
+												alt="Quality"
+											/>
+										</div>
+									</div>
+									<div class="about__item item-about">
+										<h3 class="item-about__title">Excellence in Service</h3>
+										<div class="item-about__bg-holder">
+											<img
+												src="img/about-5.jpg"
+												width="280"
+												height="176"
+												alt="Quality"
+											/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="reviews" id="reviews-section">
+					<div class="reviews__container container">
+						<div class="reviews__left-col">
+							<div class="reviews__title-box title-box">
+								<h2 class="title-box__title">Customer reviews</h2>
+								<div class="title-box__text-holder">
+									<p>
+										We strive to bring our clients’ dreams to life by crafting
+										functional and aesthetically perfect pieces that not only
+										serve practical purposes but also reflect the style and
+										taste of their owners. Reviews confirm our attitude towards
+										projects
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="reviews__right-col">
+							<div class="reviews__cards">
+								<div class="reviews__card card-reviews">
+									<div class="card-reviews__header">
+										<div class="card-reviews__left-col">
+											<div class="card-reviews__avatar-holder">
+												<img
+													src="img/reviews-avatar.jpg"
+													width="32"
+													height="32"
+													alt="Oliver Smith"
+												/>
+											</div>
+											<div class="card-reviews__info-box">
+												<h4 class="card-reviews__name">Oliver Smith</h4>
+												<div class="card-reviews__date">1 month ago</div>
+											</div>
+										</div>
+										<div class="card-reviews__right-col">
+											<div class="card-reviews__rate _icon-star">
+												<span>5.0</span>
+											</div>
+										</div>
+									</div>
+									<div class="card-reviews__text-holder">
+										<p>
+											I recently ordered furniture from Babolar, and I couldn't
+											be happier with my experience. From the moment I placed my
+											order, their team was incredibly helpful and attentive.
+											The delivery was prompt, and the quality of the furniture
+											is outstanding. It fits perfectly in my home and looks
+											even better than I imagined. I highly recommend Babolar
+											for anyone looking to enhance their living space!"
+										</p>
+									</div>
+									<a class="card-reviews__link _icon-arrow-link" href="#"
+										>read on google maps</a
+									>
+								</div>
+								<div class="reviews__card card-reviews">
+									<div class="card-reviews__header">
+										<div class="card-reviews__left-col">
+											<div class="card-reviews__avatar-holder">
+												<img
+													src="img/reviews-avatar.jpg"
+													width="32"
+													height="32"
+													alt="Oliver Smith"
+												/>
+											</div>
+											<div class="card-reviews__info-box">
+												<h4 class="card-reviews__name">Oliver Smith</h4>
+												<div class="card-reviews__date">1 month ago</div>
+											</div>
+										</div>
+										<div class="card-reviews__right-col">
+											<div class="card-reviews__rate _icon-star">
+												<span>5.0</span>
+											</div>
+										</div>
+									</div>
+									<div class="card-reviews__text-holder">
+										<p>
+											I recently ordered furniture from Babolar, and I couldn't
+											be happier with my experience. From the moment I placed my
+											order, their team was incredibly helpful and attentive.
+											The delivery was prompt, and the quality of the furniture
+											is outstanding. It fits perfectly in my home and looks
+											even better than I imagined. I highly recommend Babolar
+											for anyone looking to enhance their living space!"
+										</p>
+									</div>
+									<a class="card-reviews__link _icon-arrow-link" href="#"
+										>read on google maps</a
+									>
+								</div>
+								<div class="reviews__card card-reviews">
+									<div class="card-reviews__header">
+										<div class="card-reviews__left-col">
+											<div class="card-reviews__avatar-holder">
+												<img
+													src="img/reviews-avatar.jpg"
+													width="32"
+													height="32"
+													alt="Oliver Smith"
+												/>
+											</div>
+											<div class="card-reviews__info-box">
+												<h4 class="card-reviews__name">Oliver Smith</h4>
+												<div class="card-reviews__date">1 month ago</div>
+											</div>
+										</div>
+										<div class="card-reviews__right-col">
+											<div class="card-reviews__rate _icon-star">
+												<span>5.0</span>
+											</div>
+										</div>
+									</div>
+									<div class="card-reviews__text-holder">
+										<p>
+											I recently ordered furniture from Babolar, and I couldn't
+											be happier with my experience. From the moment I placed my
+											order, their team was incredibly helpful and attentive.
+											The delivery was prompt, and the quality of the furniture
+											is outstanding. It fits perfectly in my home and looks
+											even better than I imagined. I highly recommend Babolar
+											for anyone looking to enhance their living space!"
+										</p>
+									</div>
+									<a class="card-reviews__link _icon-arrow-link" href="#"
+										>read on google maps</a
+									>
+								</div>
+								<div class="reviews__card card-reviews">
+									<div class="card-reviews__header">
+										<div class="card-reviews__left-col">
+											<div class="card-reviews__avatar-holder">
+												<img
+													src="img/reviews-avatar.jpg"
+													width="32"
+													height="32"
+													alt="Oliver Smith"
+												/>
+											</div>
+											<div class="card-reviews__info-box">
+												<h4 class="card-reviews__name">Oliver Smith</h4>
+												<div class="card-reviews__date">1 month ago</div>
+											</div>
+										</div>
+										<div class="card-reviews__right-col">
+											<div class="card-reviews__rate _icon-star">
+												<span>5.0</span>
+											</div>
+										</div>
+									</div>
+									<div class="card-reviews__text-holder">
+										<p>
+											I recently ordered furniture from Babolar, and I couldn't
+											be happier with my experience. From the moment I placed my
+											order, their team was incredibly helpful and attentive.
+											The delivery was prompt, and the quality of the furniture
+											is outstanding. It fits perfectly in my home and looks
+											even better than I imagined. I highly recommend Babolar
+											for anyone looking to enhance their living space!"
+										</p>
+									</div>
+									<a class="card-reviews__link _icon-arrow-link" href="#"
+										>read on google maps</a
+									>
+								</div>
+								<div class="reviews__card card-reviews">
+									<div class="card-reviews__header">
+										<div class="card-reviews__left-col">
+											<div class="card-reviews__avatar-holder">
+												<img
+													src="img/reviews-avatar.jpg"
+													width="32"
+													height="32"
+													alt="Oliver Smith"
+												/>
+											</div>
+											<div class="card-reviews__info-box">
+												<h4 class="card-reviews__name">Oliver Smith</h4>
+												<div class="card-reviews__date">1 month ago</div>
+											</div>
+										</div>
+										<div class="card-reviews__right-col">
+											<div class="card-reviews__rate _icon-star">
+												<span>5.0</span>
+											</div>
+										</div>
+									</div>
+									<div class="card-reviews__text-holder">
+										<p>
+											I recently ordered furniture from Babolar, and I couldn't
+											be happier with my experience. From the moment I placed my
+											order, their team was incredibly helpful and attentive.
+											The delivery was prompt, and the quality of the furniture
+											is outstanding. It fits perfectly in my home and looks
+											even better than I imagined. I highly recommend Babolar
+											for anyone looking to enhance their living space!"
+										</p>
+									</div>
+									<a class="card-reviews__link _icon-arrow-link" href="#"
+										>read on google maps</a
+									>
+								</div>
+								<div class="reviews__card card-reviews">
+									<div class="card-reviews__header">
+										<div class="card-reviews__left-col">
+											<div class="card-reviews__avatar-holder">
+												<img
+													src="img/reviews-avatar.jpg"
+													width="32"
+													height="32"
+													alt="Oliver Smith"
+												/>
+											</div>
+											<div class="card-reviews__info-box">
+												<h4 class="card-reviews__name">Oliver Smith</h4>
+												<div class="card-reviews__date">1 month ago</div>
+											</div>
+										</div>
+										<div class="card-reviews__right-col">
+											<div class="card-reviews__rate _icon-star">
+												<span>5.0</span>
+											</div>
+										</div>
+									</div>
+									<div class="card-reviews__text-holder">
+										<p>
+											I recently ordered furniture from Babolar, and I couldn't
+											be happier with my experience. From the moment I placed my
+											order, their team was incredibly helpful and attentive.
+											The delivery was prompt, and the quality of the furniture
+											is outstanding. It fits perfectly in my home and looks
+											even better than I imagined. I highly recommend Babolar
+											for anyone looking to enhance their living space!"
+										</p>
+									</div>
+									<a class="card-reviews__link _icon-arrow-link" href="#"
+										>read on google maps</a
+									>
+								</div>
+							</div>
+							<a class="btn btn--light" href="#">DOWNLOAD MORE</a>
+						</div>
+					</div>
+				</section>
+				<section class="logos" id="logos-section">
+					<div class="logos__container container">
+						<h3 class="logos__title">Our partners</h3>
+						<div class="logos__row">
+							<div class="logos__image-holder">
+								<img
+									src="img/logos-1.svg"
+									width="176"
+									height="76"
+									alt="logo company"
+								/>
+							</div>
+							<div class="logos__image-holder">
+								<img
+									src="img/logos-2.svg"
+									width="176"
+									height="76"
+									alt="logo company"
+								/>
+							</div>
+							<div class="logos__image-holder">
+								<img
+									src="img/logos-3.svg"
+									width="176"
+									height="76"
+									alt="logo company"
+								/>
+							</div>
+							<div class="logos__image-holder">
+								<img
+									src="img/logos-4.svg"
+									width="176"
+									height="76"
+									alt="logo company"
+								/>
+							</div>
+							<div class="logos__image-holder">
+								<img
+									src="img/logos-5.svg"
+									width="176"
+									height="76"
+									alt="logo company"
+								/>
+							</div>
+							<div class="logos__image-holder">
+								<img
+									src="img/logos-6.svg"
+									width="176"
+									height="76"
+									alt="logo company"
+								/>
+							</div>
+							<div class="logos__image-holder">
+								<img
+									src="img/logos-7.svg"
+									width="176"
+									height="76"
+									alt="logo company"
+								/>
+							</div>
+							<div class="logos__image-holder">
+								<img
+									src="img/logos-8.svg"
+									width="176"
+									height="76"
+									alt="logo company"
+								/>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="footer">
+				<div class="footer__container container">
+					<div class="footer__top">
+						<div class="footer__left-col">
+							<div class="footer__title-box">
+								<h3 class="footer__title">
+									Bespoke architectural design tailored to your
+									<span>unique lifestyle</span>
+								</h3>
+								<a class="btn" href="#">Get in touch</a>
+							</div>
+							<div class="footer__menu">
+								<ul id="menu-main-menu" class="menu">
+									<li class="menu-item">
+										<a href="/">About us</a>
+									</li>
+									<li class="menu-item">
+										<a href="/">Products</a>
+									</li>
+									<li class="menu-item">
+										<a href="/">Projects</a>
+									</li>
+									<li class="menu-item">
+										<a href="/">Contact</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__right-col">
+							<div class="footer__contact contact-info">
+								<div class="contact-info__box">
+									<h4 class="contact-info__subtitle">Contact us</h4>
+									<h3 class="contact-info__title">Babolar ® Head Office</h3>
+									<a
+										href="https://maps.app.goo.gl/nyUR7QpUNdXeuoYs9"
+										target="_blank"
+										>206-188 Fairview Mall Dr Toronto, ON M2J 0H7</a
+									>
+								</div>
+								<div class="contact-info__box">
+									<h4 class="contact-info__subtitle">phone</h4>
+									<a href="tel:+16475634643">+1 (647) 563 46 43</a>
+								</div>
+								<div class="contact-info__box">
+									<h4 class="contact-info__subtitle">email</h4>
+									<a href="mailto:order@babolar.ca">order@babolar.ca</a>
+								</div>
+								<div class="social-icons">
+									<a class="social-icons__facebook _icon-facebook" href="/"
+										>facebook</a
+									>
+									<a class="social-icons__linkedin _icon-linkedin" href="/"
+										>linkedin</a
+									>
+									<a class="social-icons__instagram _icon-instagram" href="/"
+										>instagram</a
+									>
+									<a class="social-icons__youtube _icon-youtube" href="/"
+										>youtube</a
+									>
+								</div>
+							</div>
+							<div class="footer__map">
+								<iframe
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.64463878332!2d-79.34390512330029!3d43.78023497109632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d2fa46993e39%3A0xf5ab2cf1e263845e!2zMTg4IEZhaXJ2aWV3IE1hbGwgRHIgIzIwNiwgVG9yb250bywgT04gTTJKIDBINywg0JrQsNC90LDQtNCw!5e0!3m2!1suk!2sro!4v1734734320247!5m2!1suk!2sro"
+									width="600"
+									height="450"
+									style="border: 0"
+									allowfullscreen=""
+									loading="lazy"
+									referrerpolicy="no-referrer-when-downgrade"
+								></iframe>
+							</div>
+						</div>
+					</div>
+					<div class="footer__bottom bottom-footer">
+						<div class="bottom-footer__left-col">
+							<div class="footer__copyright">
+								<p>
+									© 2025 Babolar®. All content is available under the Creative
+									Commons Attribution 4.0 International license unless otherwise
+									noted.
+								</p>
+							</div>
+						</div>
+						<div class="bottom-footer__right-col">
+							<div class="footer__additional-menu">
+								<ul id="additional-menu" class="menu">
+									<li class="menu-item">
+										<a href="/">Privacy Policy</a>
+									</li>
+									<li class="menu-item">
+										<a href="/">Cookie Policy</a>
+									</li>
+									<li class="menu-item">
+										<a href="/">Update cookie settings</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+		<script src="js/main.js"></script>
+	</body>
 </html>

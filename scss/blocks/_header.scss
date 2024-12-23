@@ -1,8 +1,10 @@
 .header {
   padding: 12px 16px;
+
   @media (min-width: $pc) {
     padding: 16px 72px;
   }
+
   .container {
     max-width: 100%;
     padding: 0;
@@ -10,6 +12,7 @@
 
   &__logo {
     font-size: 0;
+
     img {
       @media (min-width: $pc) {
         width: 100%;
@@ -17,6 +20,7 @@
         object-fit: cover;
       }
     }
+
     @media (min-width: $pc) {
       display: block;
       max-width: 200px;
@@ -43,9 +47,11 @@
     transition: right 0.6s;
     border-radius: 4px;
     padding: 48px 64px 24px;
+
     &.active {
       right: 0;
     }
+
     @media (min-width: $pc) {
       max-width: 376px;
     }
@@ -67,6 +73,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+
     @media (min-width: $pc) {
       gap: 48px;
     }
@@ -76,20 +83,26 @@
     display: flex;
     align-items: center;
     gap: 4px;
+
     @media (min-width: $pc) {
       gap: 8px;
     }
+
     .btn {
       display: flex;
       align-items: center;
       gap: 8px;
+      background: var(--colors-dark-100);
       padding: 11px 12px;
+
       span {
         display: none;
       }
+
       &::before {
         font-size: 16px;
       }
+
       @media (min-width: $pc) {
         span {
           display: block;
@@ -102,13 +115,16 @@
 .menu-burger {
   cursor: pointer;
   padding: 7.5px 8px;
+
   &::before {
     font-size: 32px;
     color: var(--colors-dark-100);
   }
+
   span {
     display: none;
   }
+
   @media (min-width: $pc) {
     color: var(--colors-dark-100);
     font-size: var(--fonts-size-12);
@@ -123,25 +139,31 @@
     transition: all 0.4s;
     border-radius: 4px;
     border: 1.5px solid transparent;
+
     span {
       display: block;
     }
+
     &:hover {
       color: var(--colors-dark-beige-100);
       border-color: var(--colors-dark-beige-60);
+
       &::before {
         color: var(--colors-dark-beige-100);
       }
     }
+
     &:active {
       color: var(--colors-dark-100);
       border-color: var(--colors-dark-100);
+
       &::before {
         color: var(--colors-dark-100);
       }
     }
   }
 }
+
 .menu-close {
   cursor: pointer;
   display: block;
@@ -151,10 +173,12 @@
   width: 32px;
   height: 32px;
   color: var(--colors-dark-100);
+
   &::before {
     font-size: 32px;
   }
 }
+
 .menu {
   display: flex;
   flex-wrap: wrap;
@@ -162,6 +186,7 @@
   list-style: none;
   row-gap: 16px;
 }
+
 .menu-item {
   a {
     color: var(--colors-dark-100);
@@ -176,10 +201,12 @@
     padding: 17px 16px;
     border-radius: 4px;
     border: 1.5px solid transparent;
+
     &:hover {
       color: var(--colors-dark-beige-100);
       border-color: var(--colors-dark-beige-60);
     }
+
     &:active {
       color: var(--colors-dark-100);
       border-color: var(--colors-dark-100);

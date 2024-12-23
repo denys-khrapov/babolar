@@ -3,11 +3,13 @@
 	margin: 0px;
 	border: 0px;
 }
+
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 }
+
 *::before,
 *::after {
 	display: inline-block;
@@ -23,11 +25,20 @@ body {
 	content: '\e904';
 }
 
+._icon-arrow-link:after {
+	content: '\e902';
+}
+
+._icon-play:after {
+	content: '\e90b';
+}
+
 .container {
 	width: 100%;
 	max-width: 832px;
 	padding: 0 16px;
 	margin: 0 auto;
+
 	@media (min-width: $pc) {
 		width: 100%;
 		max-width: $containerWidth;
@@ -53,18 +64,18 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
+
 	// Притискаємо footer
-	> main {
+	>main {
 		flex: 1 1 auto;
 	}
+
 	// Фікс для слайдерів
-	> * {
+	>* {
 		min-width: 0;
 	}
 }
-
-
-

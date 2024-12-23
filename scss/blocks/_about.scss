@@ -1,0 +1,151 @@
+.about {
+	padding: 24px 0;
+
+	&__container {}
+
+	&__content {
+		background: var(--colors-base-white-100);
+		display: flex;
+		flex-direction: column;
+		row-gap: 64px;
+		padding: 24px 16px;
+
+		@media (min-width:$pc) {
+			padding: 64px;
+		}
+	}
+
+	&__top {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		gap: 48px;
+
+		@media (min-width:$pc) {
+			gap: 96px;
+		}
+	}
+
+	&__title-box {
+		gap: 24px;
+		min-width: 256px;
+		flex: 1 0 0;
+
+		@media (min-width:$pc) {
+			gap: 32px;
+			min-width: 276px;
+			max-width: 376px;
+		}
+	}
+
+	&__video-holder {
+		height: 276px;
+		min-width: 256px;
+		flex: 1 0 0;
+		position: relative;
+
+		@media (min-width:$pc) {
+			height: 476px;
+		}
+
+		.btn {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			&::before {
+				display: none;
+			}
+		}
+
+		video {
+			width: 100%;
+			height: 100%;
+			border-radius: 4px;
+			object-fit: cover;
+		}
+	}
+
+	&__bottom {}
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	&__item {}
+}
+
+.container {}
+
+.title-box {
+
+	&__title {}
+
+	&__text-holder {}
+}
+
+
+.item-about {
+	position: relative;
+	min-width: 256px;
+	min-height: 128px;
+	flex: 1 0 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	border-radius: 4px;
+	overflow: hidden;
+	padding: 16px;
+
+	&:hover {
+		.item-about__title {
+			transform: translateY(1000%);
+		}
+
+		.item-about__bg-holder {
+			&::before {
+				background: transparent;
+			}
+		}
+	}
+
+	&__title {
+		color: var(--colors-light-20);
+		text-align: right;
+		font-size: var(--fonts-size-20);
+		font-weight: 500;
+		line-height: 1.3;
+		transition: all 0.5s;
+		position: relative;
+		z-index: 5;
+	}
+
+	&__bg-holder {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(64, 58, 56, 0.50);
+			transition: all 0.4s;
+		}
+
+		img {
+			border-radius: 4px;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
