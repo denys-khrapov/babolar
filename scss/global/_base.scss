@@ -21,18 +21,6 @@ body {
 	font-size: 16px;
 }
 
-._icon-close-right:after {
-	content: '\e904';
-}
-
-._icon-arrow-link:after {
-	content: '\e902';
-}
-
-._icon-play:after {
-	content: '\e90b';
-}
-
 
 .container {
 	width: 100%;
@@ -51,6 +39,7 @@ body {
 	color: var(--colors-dark-beige-20);
 	line-height: 1;
 	font-family: $fontFamily;
+	font-weight: 400;
 	//text-rendering: optimizeLegibility;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;

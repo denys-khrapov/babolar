@@ -7,6 +7,14 @@
 		align-items: center;
 		gap: 12px;
 
+		.title-box__title {
+			text-align: center;
+
+			@media (min-width:$pc) {
+				margin-left: auto;
+			}
+		}
+
 		&:not(:last-child) {
 			margin-bottom: 24px;
 		}
@@ -32,22 +40,16 @@
 	}
 }
 
-.title-box {
-
-	&__title {
-		text-align: center;
-
-		@media (min-width:$pc) {
-			margin-left: auto;
-		}
-	}
-}
-
-
 .fixtures-slider {
 	overflow: visible;
 
+	.swiper-wrapper {
+		align-items: stretch;
 
+		@media (min-width:$pc) {
+			align-items: normal;
+		}
+	}
 }
 
 
@@ -58,6 +60,7 @@
 	flex-direction: column-reverse;
 	width: 100%;
 	max-width: 256px;
+	height: auto;
 
 	@media (min-width:$pc) {
 		max-width: 776px;

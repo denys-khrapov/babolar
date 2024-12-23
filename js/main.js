@@ -115,9 +115,39 @@ document.addEventListener('DOMContentLoaded', function () {
 			spaceBetween: 16,
 			slidesPerView: 'auto',
 			navigation: {
-				nextEl: '.nav-slider__button-next',
-				prevEl: '.nav-slider__button-prev',
+				nextEl: '.fixtures__nav .nav-slider__button-next',
+				prevEl: '.fixtures__nav .nav-slider__button-prev',
 			},
 		})
+
+		let heroSwiper = new Swiper('.hero-slider', {
+			effect: 'fade',
+			speed: 800,
+			slidesPerView: 1,
+			navigation: {
+				nextEl: '.hero__nav .nav-slider__button-next',
+				prevEl: '.hero__nav .nav-slider__button-prev',
+			},
+			pagination: false,
+			breakpoints: {
+				1280: {
+					navigation: {
+						enabled: false,
+					},
+				},
+			},
+		})
+
+		document
+			.querySelectorAll('.pagination-slider__item')
+			.forEach((item, index) => {
+				item.addEventListener('click', () => {
+					heroSwiper.slideTo(index)
+					document
+						.querySelectorAll('.pagination-slider__item')
+						.forEach(el => el.classList.remove('active'))
+					item.classList.add('active')
+				})
+			})
 	}
 })
