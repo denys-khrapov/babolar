@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	updateThemePreference()
 	setupThemeToggle()
 	initMobileMenu()
-	// Обновляет тему на основе системных настроек
+	initSwiper()
+	// Updates the theme based on system settings
 	function updateThemePreference() {
 		const html = document.documentElement
 		const prefersDarkScheme = window.matchMedia(
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	}
 
-	// Настраивает переключение между темами
+	// Configures switching between themes
 	function setupThemeToggle() {
 		const buttons = document.querySelectorAll('.theme-toggle')
 
@@ -39,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	}
 
-	// Обновляет состояние кнопок (выделяет активную)
+	// Updates the state of the buttons (highlights the active one)
 	function updateButtonState(isDarkMode) {
 		const lightButton = document.querySelector('.theme-toggle.light')
 		const darkButton = document.querySelector('.theme-toggle.dark')
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	// Временно отключает анимации
+	// Temporarily disables animations
 	function withoutTransition(callback) {
 		const html = document.documentElement
 		html.style.transition = 'none'
@@ -77,46 +78,46 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	}
 
-	Fancybox.bind('[data-fancybox]', {
-		// Your custom options
-	})
-
 	document.getElementById('playButton').addEventListener('click', function () {
 		const video = document.getElementById('myVideo')
 
-		// Відкрити відео у повноекранному режимі
 		if (video.requestFullscreen) {
 			video.requestFullscreen()
 		} else if (video.webkitRequestFullscreen) {
-			// Safari
 			video.webkitRequestFullscreen()
 		} else if (video.msRequestFullscreen) {
-			// IE/Edge
 			video.msRequestFullscreen()
 		}
 
-		// Увімкнути звук і запустити відео
 		video.muted = false
 		video.play()
 	})
 
-	// Відстеження виходу з повноекранного режиму
 	document.addEventListener('fullscreenchange', function () {
 		const video = document.getElementById('myVideo')
 
 		if (!document.fullscreenElement) {
-			// Якщо відео вийшло з повноекранного режиму, вимикаємо звук
 			video.muted = true
 		}
 	})
 
-	// Для Safari
+	// For Safari
 	document.addEventListener('webkitfullscreenchange', function () {
 		const video = document.getElementById('myVideo')
 
 		if (!document.webkitFullscreenElement) {
-			// Якщо відео вийшло з повноекранного режиму, вимикаємо звук
 			video.muted = true
 		}
 	})
+
+	function initSwiper() {
+		let fixturesSwiper = new Swiper('.fixtures-slider', {
+			spaceBetween: 16,
+			slidesPerView: 'auto',
+			navigation: {
+				nextEl: '.nav-slider__button-next',
+				prevEl: '.nav-slider__button-prev',
+			},
+		})
+	}
 })
