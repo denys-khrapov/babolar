@@ -15,6 +15,10 @@
 		}
 
 		@media (min-width:$pc) {
+			row-gap: 16px;
+			width: 100%;
+			max-width: 796px;
+
 			&:not(:last-child) {
 				margin-bottom: 64px;
 			}
@@ -281,5 +285,11 @@
 			height: 100%;
 			object-fit: cover;
 		}
+	}
+}
+
+.dark-theme .pagination-projects-slide {
+	&::before {
+		color: #D0D0D0;
 	}
 }

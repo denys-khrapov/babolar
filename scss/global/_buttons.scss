@@ -34,12 +34,18 @@
     border-color: transparent;
   }
 
-  &--light {
-    background: var(--colors-dark-brown-20);
-    color: var(--colors-dark-100);
+  &.btn--light {
+    background: #D8D7D7;
+    color: #464443;
 
     &:hover {
-      background: var(--colors-dark-brown-80);
+      border-color: #B39F93;
+      background: #B2B0AF;
+    }
+
+    &:active {
+      border-color: transparent;
+      background: #D0D0D0;
     }
   }
 }

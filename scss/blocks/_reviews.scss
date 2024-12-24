@@ -24,7 +24,6 @@
 			position: sticky;
 			top: 0;
 			max-width: 576px;
-			flex: 1 0 0;
 			padding-top: 96px;
 		}
 	}
@@ -50,7 +49,22 @@
 	.btn {
 		padding: 17px 16px;
 		width: 100%;
+		background: #D8D7D7;
+		color: #464443;
+
+		&:hover {
+			background: #B2B0AF;
+		}
+
+		&:active {
+			background: #D0D0D0;
+		}
 	}
+}
+
+.dark-theme .reviews .btn {
+	background: #403A38;
+	color: #D0D0D0;
 }
 
 .card-reviews {
@@ -59,6 +73,10 @@
 	min-width: 256px;
 	flex: 1 0 0;
 	padding: 16px;
+
+	@media (min-width:$pc) {
+		padding: 24px;
+	}
 
 	&__header {
 		display: flex;
@@ -100,6 +118,10 @@
 		font-size: var(--fonts-size-10);
 		font-weight: 500;
 		line-height: 1.55;
+
+		@media (min-width:$pc) {
+			font-size: var(--fonts-size-12);
+		}
 	}
 
 	&__date {
@@ -107,6 +129,10 @@
 		font-size: var(--fonts-size-10);
 		font-weight: 300;
 		line-height: 1.55;
+
+		@media (min-width:$pc) {
+			font-size: var(--fonts-size-12);
+		}
 	}
 
 	&__right-col {}
@@ -136,21 +162,30 @@
 		align-self: stretch;
 		font-weight: 300;
 		line-height: 1.55;
+
+		@media (min-width:$pc) {
+			font-size: var(--fonts-size-16);
+		}
 	}
 
 	&__link {
 		color: var(--colors-dark-100);
 		font-size: var(--fonts-size-12);
+		width: fit-content;
 		border-radius: 4px;
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		padding: 8px;
 		text-decoration: none;
 		justify-content: flex-end;
 		font-weight: 500;
 		letter-spacing: 0.36px;
 		text-transform: uppercase;
+		transition: all 0.4s;
+		border: 1.5px solid transparent;
+		padding: 3px 7px;
+		margin-top: 16px;
+		margin-left: auto;
 
 		&::before {
 			display: none;
@@ -158,6 +193,16 @@
 
 		&::after {
 			font-size: 20px;
+		}
+
+		&:hover {
+			color: var(--colors-dark-beige-100);
+			border-color: var(--colors-dark-beige-60);
+		}
+
+		&:active {
+			color: var(--colors-dark-100);
+			border-color: var(--colors-dark-100);
 		}
 	}
 }
