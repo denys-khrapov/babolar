@@ -175,15 +175,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		function scrollToProjectsSection() {
 			const projectsSection = document.querySelector('#projects-section')
+			const header = document.querySelector('.header')
+
 			if (projectsSection) {
-				projectsSection.scrollIntoView({
-					block: 'start',
-				})
+				if (window.innerWidth < 1279 && header) {
+					const heightHeader = header.clientHeight - 1
+					console.log(`${heightHeader}`)
+
+					const sectionTopPosition = projectsSection.getBoundingClientRect().top + window.scrollY
+					window.scrollTo({
+						top: sectionTopPosition - heightHeader,
+					})
+				} else if (window.innerWidth >= 1279) {
+					projectsSection.scrollIntoView({
+						block: 'start',
+					})
+				}
 			}
 		}
 
 		paginationSlides.forEach(slide => {
-			slide.addEventListener('click', () => {
+			slide.addEventListener('pointerdown', () => {
 				scrollToProjectsSection()
 			})
 		})
@@ -203,13 +215,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		let notificationClose = document.querySelector('.notification__close')
 		let notification = document.querySelector('.notification')
 
-		if (localStorage.getItem('notificationHidden') === 'true') {
+		if (sessionStorage.getItem('notificationHidden') === 'true') {
 			notification.classList.add('hide')
 		}
 
 		notificationClose.addEventListener('click', function () {
 			notification.classList.add('hide')
-			localStorage.setItem('notificationHidden', 'true')
+			sessionStorage.setItem('notificationHidden', 'true')
 		})
 	}
 })

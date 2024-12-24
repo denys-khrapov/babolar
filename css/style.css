@@ -851,6 +851,8 @@ html.dark-theme .logo-white {
 }
 .notification.hide {
   display: none;
+  padding: 0;
+  margin: 0;
 }
 @media (min-width: 1280px) {
   .notification {
