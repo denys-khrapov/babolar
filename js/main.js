@@ -199,5 +199,17 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (slidesCount <= 5) {
 			document.querySelector('.projects__nav').style.display = 'none'
 		}
+
+		let notificationClose = document.querySelector('.notification__close')
+		let notification = document.querySelector('.notification')
+
+		if (localStorage.getItem('notificationHidden') === 'true') {
+			notification.classList.add('hide')
+		}
+
+		notificationClose.addEventListener('click', function () {
+			notification.classList.add('hide')
+			localStorage.setItem('notificationHidden', 'true')
+		})
 	}
 })
