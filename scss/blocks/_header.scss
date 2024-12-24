@@ -1,4 +1,8 @@
 .header {
+  background: var(--colors-dark-beige-20);
+  position: sticky;
+  top: 0;
+  z-index: 100;
   padding: 12px 16px;
 
   @media (min-width: $pc) {
