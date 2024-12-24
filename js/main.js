@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Updates the theme based on system settings
 	function updateThemePreference() {
 		const html = document.documentElement
-		const prefersDarkScheme = window.matchMedia(
-			'(prefers-color-scheme: dark)'
-		).matches
+		const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches
 		const themeClass = 'dark-theme'
 
 		withoutTransition(() => {
@@ -122,6 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		let heroSwiper = new Swiper('.hero-slider', {
 			effect: 'fade',
+			fadeEffect: {
+				crossFade: true,
+			},
 			speed: 800,
 			slidesPerView: 1,
 			navigation: {
@@ -129,25 +130,74 @@ document.addEventListener('DOMContentLoaded', function () {
 				prevEl: '.hero__nav .nav-slider__button-prev',
 			},
 			pagination: false,
+		})
+
+		document.querySelectorAll('.pagination-hero__item').forEach((item, index) => {
+			item.addEventListener('click', () => {
+				heroSwiper.slideTo(index)
+				document.querySelectorAll('.pagination-hero__item').forEach(el => el.classList.remove('active'))
+				item.classList.add('active')
+			})
+		})
+
+		let paginationProjectsSwiper = new Swiper('.pagination-projects-slider', {
+			spaceBetween: 16,
+			slidesPerView: 'auto',
+			freeMode: true,
+			watchSlidesProgress: true,
 			breakpoints: {
 				1280: {
-					navigation: {
-						enabled: false,
-					},
+					spaceBetween: 24,
 				},
 			},
 		})
 
-		document
-			.querySelectorAll('.pagination-slider__item')
-			.forEach((item, index) => {
-				item.addEventListener('click', () => {
-					heroSwiper.slideTo(index)
-					document
-						.querySelectorAll('.pagination-slider__item')
-						.forEach(el => el.classList.remove('active'))
-					item.classList.add('active')
+		let projectsSwiper = new Swiper('.projects-slider', {
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true,
+			},
+			speed: 800,
+			autoHeight: true,
+			slidesPerView: 1,
+			navigation: {
+				nextEl: '.projects__nav .nav-slider__button-next',
+				prevEl: '.projects__nav .nav-slider__button-prev',
+			},
+			thumbs: {
+				swiper: paginationProjectsSwiper,
+			},
+		})
+		const slidesCount = document.querySelectorAll('.projects-slider .swiper-slide').length
+		const projectsNextButton = document.querySelector('.projects__nav .nav-slider__button-next')
+		const projectsPrevButton = document.querySelector('.projects__nav .nav-slider__button-prev')
+		const paginationSlides = document.querySelectorAll('.pagination-projects-slide')
+
+		function scrollToProjectsSection() {
+			const projectsSection = document.querySelector('#projects-section')
+			if (projectsSection) {
+				projectsSection.scrollIntoView({
+					block: 'start',
 				})
+			}
+		}
+
+		paginationSlides.forEach(slide => {
+			slide.addEventListener('click', () => {
+				scrollToProjectsSection()
 			})
+		})
+
+		projectsNextButton.addEventListener('click', () => {
+			scrollToProjectsSection()
+		})
+
+		projectsPrevButton.addEventListener('click', () => {
+			scrollToProjectsSection()
+		})
+
+		if (slidesCount <= 5) {
+			document.querySelector('.projects__nav').style.display = 'none'
+		}
 	}
 })
