@@ -1,5 +1,8 @@
 .projects {
 	padding: 48px 0;
+	background-image: url(../img/background-projects.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
 
 	@media (min-width:$pc) {
 		padding: 128px 0;

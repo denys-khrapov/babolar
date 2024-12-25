@@ -194,32 +194,25 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		}
 
-		// paginationSlides.forEach(slide => {
-		// 	slide.addEventListener('pointerdown', () => {
-		// 		scrollToProjectsSection()
-		// 	})
-		// })
-
 		paginationSlides.forEach(slide => {
-			let isDragging = false // Флаг для відстеження перетягування
+			let isDragging = false
 
 			slide.addEventListener('pointerdown', () => {
-				isDragging = false // Скидаємо прапорець на початку
+				isDragging = false
 			})
 
 			slide.addEventListener('pointermove', () => {
-				isDragging = true // Якщо є рух — це перетягування
+				isDragging = true
 			})
 
 			slide.addEventListener('pointerup', () => {
 				if (!isDragging) {
-					// Якщо не було перетягування, виконуємо прокрутку
 					scrollToProjectsSection()
 				}
 			})
 
 			slide.addEventListener('pointercancel', () => {
-				isDragging = false // Скидаємо прапорець, якщо подія скасована
+				isDragging = false
 			})
 		})
 

@@ -1,12 +1,15 @@
+@use "sass:math";
+
+@import 'global/mixins';
 @import 'global/typography';
 @import 'global/variables';
 @import 'global/base';
 @import 'global/icons';
 @import 'global/colors';
+@import 'global/common';
 @import 'global/reset';
 @import 'global/buttons';
 @import 'global/links';
-@import 'global/common';
 
 @import 'blocks/notification';
 @import 'blocks/header';

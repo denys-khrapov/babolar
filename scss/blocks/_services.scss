@@ -14,6 +14,8 @@
 
 		@media (min-width:$pc) {
 			row-gap: 64px;
+			padding: 0;
+			max-width: 1576px;
 		}
 	}
 
@@ -27,7 +29,8 @@
 		gap: 16px;
 
 		@media (min-width:$pc) {
-			gap: 23.9px;
+			gap: 24px;
+			justify-content: center;
 		}
 	}
 
@@ -42,27 +45,26 @@
 	flex: 1 0 0;
 	border-radius: 4px;
 
+
 	@media (min-width:$pc) {
 		flex: unset;
 		min-width: unset;
 	}
 
-	&.width-74 {
-		@media (min-width:$pc) {
-			width: 74.61%;
-		}
+	&.width-75 {
+		@include adaptiveValue("width", 1176, 736, 2, 1720, 1280);
 	}
 
-	&.width-23 {
-		@media (min-width:$pc) {
-			width: 23.86%;
-		}
+	&.width-376 {
+		max-width: 376px;
 	}
 
-	&.width-49 {
-		@media (min-width:$pc) {
-			width: 49.24%;
-		}
+	&.width-356 {
+		@include adaptiveValue("width", 376, 356, 2, 1720, 1280);
+	}
+
+	&.width-25 {
+		@include adaptiveValue("width", 776, 376, 2, 1720, 1280);
 	}
 
 	&::before {
