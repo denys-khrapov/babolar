@@ -1,7 +1,16 @@
 .fixtures {
 	padding: 96px 0;
 
-	&__container {}
+	@media (min-width:$pc) {
+		padding: 96px 72px;
+	}
+
+	&__container {
+		@media (min-width:$pc) {
+			padding: 0;
+			max-width: 100%;
+		}
+	}
 
 	&__title-box {
 		align-items: center;
@@ -51,9 +60,6 @@
 		}
 	}
 }
-
-
-.swiper-slide {}
 
 .fixtures-slide {
 	display: flex;

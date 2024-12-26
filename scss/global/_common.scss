@@ -224,7 +224,47 @@ html.dark-theme {
 }
 
 .bg-holder {
-	background-image: url(../img/background-projects.svg);
+	background: linear-gradient(180deg, rgb(239, 235, 233) 5.42%, rgba(239, 235, 233, 0.2) 12%), url("../img/background-projects.svg");
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	@media (min-width:$pc) {
+		background: linear-gradient(180deg, rgba(239, 235, 233, 1) 17.42%, rgba(239, 235, 233, 0.2) 22.43%), url("../img/background-projects.svg");
+	}
+}
+
+
+.fancybox__backdrop {
+	background: #000000 !important;
+	opacity: 0.75 !important;
+}
+
+.f-button.is-close-btn {
+	top: 14px !important;
+	right: 14px !important;
+	color: var(--colors-dark-100);
+	background-color: transparent;
+	width: 28px;
+	height: 28px;
+	border-radius: 4px;
+	border: 1.5px solid transparent;
+	padding: 4px;
+
+	&:hover {
+		border-color: var(--colors-dark-beige-60);
+		color: var(--colors-dark-beige-100);
+	}
+
+	&:active {
+		border-color: var(--colors-dark-100);
+		color: var(--colors-dark-100);
+	}
+}
+
+.fancybox__slide {
+	padding: 16px;
+}
+
+.wpcf7-spinner {
+	display: none !important;
 }

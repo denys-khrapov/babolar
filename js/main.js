@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	setupThemeToggle()
 	initMobileMenu()
 	initSwiper()
+
+	Fancybox.bind('[data-fancybox]', {})
+
 	// Updates the theme based on system settings
 	function updateThemePreference() {
 		const html = document.documentElement
@@ -240,4 +243,68 @@ document.addEventListener('DOMContentLoaded', function () {
 			sessionStorage.setItem('notificationHidden', 'true')
 		})
 	}
+
+	///////////////////////
+
+	const updateDeleteIcons = () => {
+		const fileHolders = document.querySelectorAll('.form__file-holder')
+		fileHolders.forEach((holder, index) => {
+			const deleteIcon = holder.querySelector('.delete-file')
+			if (fileHolders.length === 1) {
+				deleteIcon.style.display = 'none' // Ховаємо іконку, якщо блок один
+			} else {
+				deleteIcon.style.display = '' // Повертаємо іконку, якщо блоків більше одного
+			}
+		})
+	}
+
+	// Функція для обробки вибору файлу
+	document.body.addEventListener('change', e => {
+		if (e.target.classList.contains('wpcf7-file')) {
+			const fileInput = e.target
+			const fileName = fileInput.files[0]?.name || 'Select file to upload'
+			const fileLabel = fileInput.closest('.form__row--file').querySelector('.file-label')
+
+			// Обрізаємо назву файлу до 15 символів
+			fileLabel.textContent = fileName.length > 25 ? fileName.substring(0, 25) + '...' : fileName
+		}
+	})
+
+	// Додавання нового поля для завантаження файлу
+	const addButton = document.querySelector('.another-file')
+	addButton.addEventListener('click', () => {
+		const fileRow = document.querySelector('.form__row--file')
+		if (!fileRow) return // Перевірка, якщо немає жодного блоку
+
+		const newFileRow = fileRow.cloneNode(true) // Копіюємо існуючий елемент
+
+		// Очищуємо скопійований input та текст
+		const input = newFileRow.querySelector('.wpcf7-file')
+		input.value = ''
+		newFileRow.querySelector('.file-label').textContent = 'Select file to upload'
+
+		// Створюємо унікальний ID для нового поля і відповідної мітки
+		const uniqueId = `file-${Date.now()}`
+		input.id = uniqueId
+		newFileRow.querySelector('label').setAttribute('for', uniqueId)
+
+		// Додаємо скопійований елемент у розмітку
+		fileRow.parentNode.insertBefore(newFileRow, addButton.closest('.form__row'))
+
+		updateDeleteIcons() // Оновлюємо видимість іконок видалення
+	})
+
+	// Видалення блоку при кліку на "крестик"
+	document.body.addEventListener('click', e => {
+		if (e.target.classList.contains('delete-file')) {
+			const fileRow = e.target.closest('.form__row--file') // Знаходимо батьківський блок .form__row--file
+			if (fileRow) {
+				fileRow.remove() // Видаляємо блок .form__row--file
+				updateDeleteIcons() // Оновлюємо видимість іконок видалення
+			}
+		}
+	})
+
+	// Виклик функції для початкової перевірки
+	updateDeleteIcons()
 })

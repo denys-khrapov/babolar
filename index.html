@@ -28,6 +28,7 @@
 					<button class="notification__close _icon-close"><span>close</span></button>
 				</div>
 			</div>
+
 			<header class="header">
 				<div class="container">
 					<div class="header__row">
@@ -44,7 +45,9 @@
 							</div>
 						</div>
 						<div class="header__right-col">
-							<a class="btn _icon-comment" href="#"><span>Get in touch</span></a>
+							<button type="button" class="btn _icon-comment" data-fancybox data-src="#popup">
+								<span>Get in touch</span>
+							</button>
 							<div class="menu-burger _icon-burger">
 								<span>Menu</span>
 							</div>
@@ -133,8 +136,8 @@
 										<div class="hero-slide__bg-holder">
 											<img
 												src="img/hero-slide-1.jpg"
-												width="388"
-												height="376"
+												width="976"
+												height="576"
 												alt="Custom Cabinets for Your Dream Kitchen"
 											/>
 										</div>
@@ -150,8 +153,8 @@
 										<div class="hero-slide__bg-holder">
 											<img
 												src="img/hero-slide-2.jpg"
-												width="388"
-												height="376"
+												width="976"
+												height="576"
 												alt="Custom Dressing Rooms for Every Style"
 											/>
 										</div>
@@ -167,8 +170,8 @@
 										<div class="hero-slide__bg-holder">
 											<img
 												src="img/hero-slide-3.jpg"
-												width="388"
-												height="376"
+												width="976"
+												height="576"
 												alt="Transform Your Bathroom with Custom Furniture"
 											/>
 										</div>
@@ -184,8 +187,8 @@
 										<div class="hero-slide__bg-holder">
 											<img
 												src="img/hero-slide-4.jpg"
-												width="388"
-												height="376"
+												width="976"
+												height="576"
 												alt="Optimize Your Hallway with Custom Furniture"
 											/>
 										</div>
@@ -201,8 +204,8 @@
 										<div class="hero-slide__bg-holder">
 											<img
 												src="img/hero-slide-5.jpg"
-												width="388"
-												height="376"
+												width="976"
+												height="576"
 												alt="Black Friday Sale – Custom Furniture at Unbeatable Prices!"
 											/>
 										</div>
@@ -218,8 +221,8 @@
 										<div class="hero-slide__bg-holder">
 											<img
 												src="img/hero-slide-6.jpg"
-												width="388"
-												height="376"
+												width="976"
+												height="576"
 												alt="Festive Savings – Custom Furniture for Your Perfect Christmas Home"
 											/>
 										</div>
@@ -245,8 +248,8 @@
 								<div class="box-two-block__bg-holder">
 									<img
 										src="img/two-block-1.jpg"
-										width="1480"
-										height="376"
+										width="1576"
+										height="476"
 										alt="Creation
                   of Design Projects"
 									/>
@@ -262,7 +265,7 @@
 							</div>
 							<div class="two-block__box box-two-block">
 								<div class="box-two-block__bg-holder">
-									<img src="img/two-block-2.jpg" width="1480" height="376" alt="Unique Furniture Manufacturing" />
+									<img src="img/two-block-2.jpg" width="1576" height="476" alt="Unique Furniture Manufacturing" />
 								</div>
 								<h3 class="box-two-block__title">Unique Furniture Manufacturing</h3>
 								<div class="box-two-block__text-holder">
@@ -1053,7 +1056,7 @@
 					</div>
 				</section>
 			</main>
-			<div class="bg-holder s">
+			<div class="bg-holder">
 				<section class="logos" id="logos-section">
 					<div class="logos__container container">
 						<h3 class="logos__title">Our partners</h3>
@@ -1094,7 +1097,7 @@
 										Bespoke architectural design tailored to your
 										<span>unique lifestyle</span>
 									</h3>
-									<a class="btn" href="#">Get in touch</a>
+									<button type="button" class="btn" data-fancybox data-src="#popup">Get in touch</button>
 								</div>
 								<div class="footer__menu">
 									<ul id="menu-main-menu" class="menu">
@@ -1177,6 +1180,126 @@
 						</div>
 					</div>
 				</footer>
+			</div>
+			<div class="popup" id="popup" style="display: none">
+				<div class="popup__container">
+					<h3 class="popup__title">Ready to design your perfect space?</h3>
+					<div class="popup__text-holder">
+						<p>Tell us about your project and we'll get back to you within 24 hours.</p>
+					</div>
+					<form action="#" class="form">
+						<div class="form__content">
+							<div class="form__row">
+								<div class="form__input-holder form__input-holder--name">
+									<span class="wpcf7-form-control-wrap" data-name="name-client"
+										><input
+											size="40"
+											class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+											aria-required="true"
+											aria-invalid="false"
+											placeholder="Name"
+											value=""
+											type="text"
+											name="name-client"
+									/></span>
+								</div>
+								<div class="form__input-holder form__input-holder--email">
+									<span class="wpcf7-form-control-wrap" data-name="name-client"
+										><input
+											size="40"
+											class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+											aria-required="true"
+											aria-invalid="false"
+											placeholder="Email"
+											value=""
+											type="email"
+											name="email-client"
+									/></span>
+								</div>
+							</div>
+							<div class="form__input-holder form__input-holder--phone">
+								<span class="wpcf7-form-control-wrap" data-name="name-client"
+									><input
+										size="40"
+										class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+										aria-required="true"
+										aria-invalid="false"
+										placeholder="Phone number"
+										value=""
+										type="tel"
+										name="phone-client"
+								/></span>
+							</div>
+							<div class="form__textarea-holder">
+								<span class="wpcf7-form-control-wrap" data-name="textarea-858">
+									<textarea
+										cols="40"
+										rows="10"
+										maxlength="2000"
+										class="wpcf7-form-control wpcf7-textarea"
+										aria-invalid="false"
+										name="textarea-858"
+										placeholder="Message"
+									></textarea>
+								</span>
+							</div>
+							<div class="form__row form__row--file">
+								<span class="wpcf7-form-control-wrap" data-name="file-774"
+									><input
+										size="40"
+										class="wpcf7-form-control wpcf7-file hidden"
+										accept="audio/*,video/*,image/*,.pdf,.docx"
+										aria-invalid="false"
+										id="actual-btn"
+										type="file"
+										name="file-774"
+										data-gtm-form-interact-field-id="0"
+								/></span>
+								<div class="form__file-holder _icon-attach">
+									<label for="actual-btn" class="actual-btn">
+										<span class="file-label">Select file to upload</span>
+										<span class="file-info">Formats supported: DOCX, PDF, JPG, PNG</span>
+									</label>
+									<span class="delete-file _icon-close"></span>
+								</div>
+							</div>
+							<div class="form__row form__row--another">
+								<button type="button" class="another-file _icon-plus">add another file</button>
+							</div>
+							<div class="form__submit-holder">
+								<div class="form__checkbox">
+									<input
+										type="checkbox"
+										id="checkbox"
+										name=""
+										value="By clicking Submit, you agree to our [Link to Privacy Policy]"
+									/>
+									<label class="custom-checkbox" for="checkbox">
+										By clicking "Submit," you agree to our [Link to Privacy Policy]
+									</label>
+								</div>
+								<div class="submit-button">
+									<button class="wpcf7-form-control _icon-send has-spinner wpcf7-submit" type="submit" value="Submit">
+										Submit
+									</button>
+								</div>
+								<span class="wpcf7-spinner"></span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="popup popup--thanks" style="display: none">
+				<div class="popup__container">
+					<span class="_icon-like"></span>
+					<h3 class="popup__title">Your inquiry has been received!</h3>
+					<div class="popup__text-holder">
+						<p>
+							Thank you for contacting us. We've received your message and will get back to you as soon as possible.
+							You'll receive a confirmation email shortly.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 		<script src="js/swiper-bundle.min.js"></script>

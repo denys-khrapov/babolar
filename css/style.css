@@ -479,9 +479,47 @@ html.dark-theme .logo-white {
   color: var(--colors-dark-100);
 }
 .bg-holder {
-  background-image: url(../img/background-projects.svg);
+  background: linear-gradient(180deg, rgb(239, 235, 233) 5.42%, rgba(239, 235, 233, 0.2) 12%), url("../img/background-projects.svg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media (min-width: 1280px) {
+  .bg-holder {
+    background: linear-gradient(180deg, rgb(239, 235, 233) 17.42%, rgba(239, 235, 233, 0.2) 22.43%), url("../img/background-projects.svg");
+  }
+}
+
+.fancybox__backdrop {
+  background: #000000 !important;
+  opacity: 0.75 !important;
+}
+
+.f-button.is-close-btn {
+  top: 14px !important;
+  right: 14px !important;
+  color: var(--colors-dark-100);
+  background-color: transparent;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1.5px solid transparent;
+  padding: 4px;
+}
+.f-button.is-close-btn:hover {
+  border-color: var(--colors-dark-beige-60);
+  color: var(--colors-dark-beige-100);
+}
+.f-button.is-close-btn:active {
+  border-color: var(--colors-dark-100);
+  color: var(--colors-dark-100);
+}
+
+.fancybox__slide {
+  padding: 16px;
+}
+
+.wpcf7-spinner {
+  display: none !important;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -1054,7 +1092,6 @@ template {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: var(--colors-dark-100);
   padding: 11px 12px;
 }
 .header__right-col .btn span {
@@ -1163,10 +1200,21 @@ template {
 .hero {
   padding: 32px 0;
 }
+@media (min-width: 1280px) {
+  .hero {
+    padding: 72px;
+  }
+}
 .hero__container {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+}
+@media (min-width: 1280px) {
+  .hero__container {
+    padding: 0;
+    max-width: 100%;
+  }
 }
 .hero__left-col {
   min-width: 276px;
@@ -1611,6 +1659,17 @@ template {
 
 .fixtures {
   padding: 96px 0;
+}
+@media (min-width: 1280px) {
+  .fixtures {
+    padding: 96px 72px;
+  }
+}
+@media (min-width: 1280px) {
+  .fixtures__container {
+    padding: 0;
+    max-width: 100%;
+  }
 }
 .fixtures__title-box {
   align-items: center;
@@ -2631,4 +2690,327 @@ template {
     width: 100%;
     max-width: 476px;
   }
+}
+
+.popup {
+  width: 100%;
+  max-width: 576px;
+  background: var(--colors-dark-beige-20);
+  border-radius: 4px;
+  padding: 16px;
+}
+@media (min-width: 1280px) {
+  .popup {
+    max-width: 476px;
+    padding: 32px;
+  }
+}
+.popup__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.popup__title {
+  color: var(--colors-dark-100);
+  font-size: var(--fonts-size-20);
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+  width: 100%;
+  max-width: 276px;
+  display: flex;
+  align-items: center;
+  min-height: 93px;
+}
+.popup__title:not(:last-child) {
+  margin-bottom: 12px;
+}
+@media (min-width: 1280px) {
+  .popup__title {
+    font-size: var(--fonts-size-25);
+    line-height: 1.25;
+  }
+  .popup__title:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+.popup ._icon-like {
+  color: var(--colors-dark-100);
+  display: inline-block;
+  font-size: 32px;
+}
+.popup ._icon-like:not(:last-child) {
+  margin-bottom: 16px;
+}
+.popup__text-holder {
+  color: var(--colors-dark-100);
+  font-size: var(--fonts-size-14);
+  font-weight: 300;
+  line-height: 1.55;
+  text-align: center;
+}
+.popup__text-holder:not(:last-child) {
+  margin-bottom: 24px;
+}
+@media (min-width: 1280px) {
+  .popup__text-holder {
+    font-size: var(--fonts-size-16);
+  }
+  .popup__text-holder:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.form input,
+.form textarea {
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  transition: all 0.4s;
+}
+.form input:hover,
+.form textarea:hover {
+  outline: none;
+  border-color: var(--colors-dark-beige-100);
+  background: var(--colors-light-20, #FBFBFA);
+}
+.form input:active, .form input:focus,
+.form textarea:active,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--colors-dark-brown-100);
+}
+.form__content {
+  display: flex;
+  flex-direction: column;
+}
+.form__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+@media (min-width: 1280px) {
+  .form__row {
+    gap: 16px;
+  }
+}
+.form__row:not(:last-child) {
+  margin-bottom: 16px;
+}
+.form__row--file > span {
+  display: none;
+}
+@media (min-width: 1280px) {
+  .form__row--another:not(:last-child) {
+    margin-bottom: 0px;
+  }
+}
+.form__input-holder > span {
+  display: flex;
+  width: 100%;
+}
+.form__input-holder input {
+  width: 100%;
+  color: var(--colors-dark-brown-80);
+  border: 1.5px solid var(--colors-light-80);
+  background: var(--colors-light-20);
+  font-size: var(--fonts-size-12);
+  font-weight: 300;
+  line-height: 1.55;
+  border-radius: 4px;
+  padding: 12.5px 12px;
+}
+.form__textarea-holder:not(:last-child) {
+  margin-bottom: 16px;
+}
+.form__textarea-holder > span {
+  display: flex;
+  width: 100%;
+}
+.form__textarea-holder textarea {
+  width: 100%;
+  color: var(--colors-dark-brown-80);
+  border: 1.5px solid var(--colors-light-80);
+  font-size: var(--fonts-size-12);
+  font-weight: 300;
+  line-height: 1.55;
+  border-radius: 4px;
+  padding: 12px;
+  resize: none;
+  max-height: 159px;
+}
+.form__input-holder--phone:not(:last-child) {
+  margin-bottom: 16px;
+}
+.form__file-holder {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.4s;
+  padding: 12px;
+}
+.form__file-holder::before {
+  color: var(--colors-base-black-100);
+  font-size: 24px;
+}
+.form__file-holder:hover {
+  border-color: var(--colors-light-80);
+  background: var(--colors-dark-brown-20);
+}
+@media (min-width: 1280px) {
+  .form__submit-holder {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+}
+.form__checkbox {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: all 0.4s;
+  padding: 12px;
+}
+.form__checkbox:not(:last-child) {
+  margin-bottom: 24px;
+}
+.form__checkbox:hover {
+  border: 1px solid var(--colors-light-80);
+  background: var(--colors-dark-brown-20);
+}
+@media (min-width: 1280px) {
+  .form__checkbox:not(:last-child) {
+    margin-bottom: 0px;
+  }
+}
+.form input.hidden {
+  display: none;
+}
+.form .actual-btn {
+  color: var(--colors-dark-brown-100);
+  font-size: var(--fonts-size-12);
+  font-weight: 500;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  cursor: pointer;
+}
+.form .file-info {
+  font-weight: 300;
+}
+.form .another-file {
+  color: var(--colors-dark-100);
+  font-size: var(--fonts-size-12);
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 4px;
+  border: 1.5px solid transparent;
+  transition: all 0.4s;
+  width: 100%;
+  padding: 8px;
+}
+.form .another-file:hover {
+  border-color: var(--colors-dark-beige-60);
+  color: var(--colors-dark-beige-100);
+}
+.form .another-file:active {
+  color: var(--colors-dark-100);
+  border-color: var(--colors-dark-100);
+}
+.form .another-file::before {
+  font-size: 20px;
+}
+.form .delete-file {
+  cursor: pointer;
+  margin-left: auto;
+}
+.form .delete-file::after {
+  color: var(--colors-base-black-100);
+  font-size: 24px;
+}
+.form #checkbox {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.form #checkbox + label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.form #checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: var(--colors-base-white-100);
+  border: 1px solid var(--colors-dark-beige-100);
+  border-radius: 4px;
+  margin-right: 8px;
+}
+.form #checkbox:checked + label::before {
+  background: var(--colors-dark-beige-100);
+  background-image: url("../img/check.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 16px 12px;
+}
+.form .custom-checkbox {
+  color: var(--colors-dark-brown-100);
+  font-size: var(--fonts-size-12);
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: flex-end;
+}
+.submit-button button {
+  color: var(--colors-dark-20);
+  background: var(--colors-dark-brown-100);
+  font-size: var(--fonts-size-12);
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 8px;
+  font-weight: 500;
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.4s;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  padding: 12px 16px;
+}
+.submit-button button::before {
+  font-size: 24px;
+}
+.submit-button button:hover {
+  border-color: var(--colors-dark-beige-100);
+  background: var(--colors-dark-brown-80);
+}
+.submit-button button:active {
+  background: var(--colors-dark-100);
+  border-color: var(--colors-dark-100);
 }/*# sourceMappingURL=style.css.map */
