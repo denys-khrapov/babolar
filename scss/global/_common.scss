@@ -233,6 +233,20 @@ html.dark-theme {
 	}
 }
 
+.dark-theme {
+
+
+	.bg-holder {
+		background: linear-gradient(180deg, rgb(24, 22, 21) 5.42%, rgba(24, 22, 21, 0.2) 12%), url("../img/background-projects.svg");
+
+		@media (min-width:$pc) {
+			background: linear-gradient(180deg,
+					rgb(24, 22, 21) 5.42%,
+					rgba(24, 22, 21, 0.2) 12%), url("../img/background-projects.svg");
+		}
+	}
+}
+
 
 .fancybox__backdrop {
 	background: #000000 !important;

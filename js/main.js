@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		const burgerMenu = document.querySelector('.menu-burger')
 		const closeBurgerMenu = document.querySelector('.menu-close')
 		const menu = document.querySelector('.header__menu')
+		const overlay = document.querySelector('.overlay')
+		const menuItem = document.querySelectorAll('.menu-item')
 
 		burgerMenu.addEventListener('click', () => {
 			menu.classList.toggle('active')
@@ -76,6 +78,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		closeBurgerMenu.addEventListener('click', () => {
 			menu.classList.remove('active')
+		})
+
+		overlay.addEventListener('click', () => {
+			menu.classList.remove('active')
+		})
+
+		menuItem.forEach(link => {
+			link.addEventListener('click', () => {
+				menu.classList.remove('active')
+			})
 		})
 	}
 
@@ -99,6 +111,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		if (!document.fullscreenElement) {
 			video.muted = true
+
+			ScrollTrigger.refresh()
 		}
 	})
 
@@ -108,6 +122,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		if (!document.webkitFullscreenElement) {
 			video.muted = true
+
+			ScrollTrigger.refresh()
 		}
 	})
 
@@ -123,6 +139,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		let heroSwiper = new Swiper('.hero-slider', {
 			effect: 'fade',
+			autoplay: {
+				delay: 7000,
+				disableOnInteraction: false,
+			},
 			fadeEffect: {
 				crossFade: true,
 			},
@@ -133,6 +153,13 @@ document.addEventListener('DOMContentLoaded', function () {
 				prevEl: '.hero__nav .nav-slider__button-prev',
 			},
 			pagination: false,
+		})
+
+		heroSwiper.on('slideChange', () => {
+			const activeIndex = heroSwiper.activeIndex
+			document.querySelectorAll('.pagination-hero__item').forEach((el, index) => {
+				el.classList.toggle('active', index === activeIndex)
+			})
 		})
 
 		document.querySelectorAll('.pagination-hero__item').forEach((item, index) => {
@@ -243,8 +270,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			sessionStorage.setItem('notificationHidden', 'true')
 		})
 	}
-
-	///////////////////////
 
 	const updateDeleteIcons = () => {
 		const fileHolders = document.querySelectorAll('.form__file-holder')

@@ -56,7 +56,9 @@
 	}
 
 	&.width-376 {
-		max-width: 376px;
+		@media (min-width:$pc) {
+			max-width: 376px;
+		}
 	}
 
 	&.width-356 {
@@ -100,11 +102,12 @@
 	&__inner {
 		display: flex;
 		flex-direction: column;
-		row-gap: 24px;
+		row-gap: 5px;
 		padding: 16px;
 		height: 100%;
 
 		@media (min-width:$pc) {
+			row-gap: 24px;
 			padding: 32px 24px;
 		}
 	}
@@ -138,7 +141,7 @@
 		color: var(--colors-dark-100);
 		font-size: var(--fonts-size-14);
 		width: 100%;
-		max-width: 256px;
+		max-width: 295px;
 		font-weight: 300;
 		line-height: 1.55;
 		opacity: 0;
@@ -187,7 +190,7 @@
 	&__icon-holder {
 		width: 100%;
 		max-width: 75px;
-		height: auto;
+		height: 75px;
 		margin-top: auto;
 		margin-left: auto;
 		position: relative;
@@ -226,6 +229,7 @@
 
 		.item-services__bg-holder {
 			z-index: -1;
+			display: none;
 		}
 
 		.item-services__text-holder {

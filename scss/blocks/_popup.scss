@@ -75,7 +75,8 @@
 	}
 }
 
-.form {
+.form,
+.wpcf7-form {
 
 	input,
 	textarea {
@@ -349,6 +350,15 @@
 		font-weight: 300;
 		line-height: 1.55;
 	}
+
+	// .wpcf7-not-valid-tip,
+	// .wpcf7-response-output {
+	// 	display: none;
+	// }
+
+	// input.wpcf7-not-valid {
+	// 	border-color: red;
+	// }
 
 }
 

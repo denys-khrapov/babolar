@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/x-icon" href="img/favico.svg" />
+		<link rel="icon" type="image/x-icon" href="img/favicon.svg" />
 		<link rel="stylesheet" href="css/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="css/fancybox.css" />
 		<link rel="stylesheet" href="css/style.css" />
@@ -28,7 +28,6 @@
 					<button class="notification__close _icon-close"><span>close</span></button>
 				</div>
 			</div>
-
 			<header class="header">
 				<div class="container">
 					<div class="header__row">
@@ -55,7 +54,7 @@
 								<div class="menu-close _icon-close"></div>
 								<ul id="menu-main-menu" class="menu">
 									<li class="menu-item">
-										<a href="/">About us</a>
+										<a href="#about-section">About us</a>
 									</li>
 									<li class="menu-item">
 										<a href="/">Products</a>
@@ -91,6 +90,7 @@
 									</div>
 								</div>
 							</div>
+							<div class="overlay"></div>
 						</div>
 					</div>
 				</div>
@@ -432,9 +432,6 @@
 									</div>
 									<div class="item-services__bg-holder">
 										<img src="img/services-1.jpg" width="1176" height="376" alt="Custom Design" />
-									</div>
-									<div class="item-services__icon-holder">
-										<img src="img/services-icon.svg" width="100" height="100" alt="Babolar" />
 									</div>
 								</div>
 							</div>
@@ -1302,8 +1299,11 @@
 				</div>
 			</div>
 		</div>
+		<script src="js/gsap.min.js"></script>
+		<script src="js/ScrollTrigger.min.js"></script>
 		<script src="js/swiper-bundle.min.js"></script>
 		<script src="js/fancybox.umd.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/animation.js"></script>
 	</body>
 </html>
