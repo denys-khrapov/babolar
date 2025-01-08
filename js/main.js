@@ -2,7 +2,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	updateThemePreference()
 	setupThemeToggle()
 	initMobileMenu()
-	initSwiper()
+	if (
+		document.querySelector('.fixtures-slider') ||
+		document.querySelector('.hero-slider') ||
+		document.querySelector('.pagination-projects-slider') ||
+		document.querySelector('.projects-slider')
+	) {
+		initSwiper()
+	}
 
 	Fancybox.bind('[data-fancybox]', {})
 
@@ -22,6 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		})
 	}
+
+	// Regular expression
+	document.addEventListener('input', function (event) {
+		if (event.target.matches('input[type="tel"]')) {
+			event.target.value = event.target.value.replace(/[^0-9\+\-\(\)\s]/g, '')
+		}
+	})
 
 	// Configures switching between themes
 	function setupThemeToggle() {
@@ -91,19 +105,45 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	}
 
-	document.getElementById('playButton').addEventListener('click', function () {
-		const video = document.getElementById('myVideo')
+	if (document.getElementById('playButton')) {
+		document.getElementById('playButton').addEventListener('click', function () {
+			const video = document.getElementById('myVideo')
 
-		if (video.requestFullscreen) {
-			video.requestFullscreen()
-		} else if (video.webkitRequestFullscreen) {
-			video.webkitRequestFullscreen()
-		} else if (video.msRequestFullscreen) {
-			video.msRequestFullscreen()
-		}
+			if (video.requestFullscreen) {
+				video.requestFullscreen()
+			} else if (video.webkitRequestFullscreen) {
+				video.webkitRequestFullscreen()
+			} else if (video.msRequestFullscreen) {
+				video.msRequestFullscreen()
+			}
 
-		video.muted = false
-		video.play()
+			video.muted = false
+			video.play()
+		})
+	}
+
+	const linksInfoBlock = document.querySelectorAll('.test a')
+
+	linksInfoBlock.forEach(link => {
+		link.addEventListener('mouseover', () => {
+			link.parentElement.classList.add('hovered')
+		})
+
+		link.addEventListener('mouseout', () => {
+			link.parentElement.classList.remove('hovered')
+		})
+
+		link.addEventListener('mousedown', () => {
+			link.parentElement.classList.add('actived')
+		})
+
+		link.addEventListener('mouseup', () => {
+			link.parentElement.classList.remove('actived')
+		})
+
+		link.addEventListener('mouseleave', () => {
+			link.parentElement.classList.remove('actived')
+		})
 	})
 
 	document.addEventListener('fullscreenchange', function () {
@@ -199,60 +239,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			},
 		})
 		const slidesCount = document.querySelectorAll('.projects-slider .swiper-slide').length
-		const projectsNextButton = document.querySelector('.projects__nav .nav-slider__button-next')
-		const projectsPrevButton = document.querySelector('.projects__nav .nav-slider__button-prev')
-		const paginationSlides = document.querySelectorAll('.pagination-projects-slide')
-
-		function scrollToProjectsSection() {
-			const projectsSection = document.querySelector('#projects-section')
-			const header = document.querySelector('.header')
-
-			if (projectsSection) {
-				if (window.innerWidth < 1279 && header) {
-					const heightHeader = header.clientHeight - 1
-					console.log(`${heightHeader}`)
-
-					const sectionTopPosition = projectsSection.getBoundingClientRect().top + window.scrollY
-					window.scrollTo({
-						top: sectionTopPosition - heightHeader,
-					})
-				} else if (window.innerWidth >= 1279) {
-					projectsSection.scrollIntoView({
-						block: 'start',
-					})
-				}
-			}
-		}
-
-		paginationSlides.forEach(slide => {
-			let isDragging = false
-
-			slide.addEventListener('pointerdown', () => {
-				isDragging = false
-			})
-
-			slide.addEventListener('pointermove', () => {
-				isDragging = true
-			})
-
-			slide.addEventListener('pointerup', () => {
-				if (!isDragging) {
-					scrollToProjectsSection()
-				}
-			})
-
-			slide.addEventListener('pointercancel', () => {
-				isDragging = false
-			})
-		})
-
-		projectsNextButton.addEventListener('click', () => {
-			scrollToProjectsSection()
-		})
-
-		projectsPrevButton.addEventListener('click', () => {
-			scrollToProjectsSection()
-		})
 
 		if (slidesCount <= 5) {
 			document.querySelector('.projects__nav').style.display = 'none'
@@ -270,66 +256,4 @@ document.addEventListener('DOMContentLoaded', function () {
 			sessionStorage.setItem('notificationHidden', 'true')
 		})
 	}
-
-	const updateDeleteIcons = () => {
-		const fileHolders = document.querySelectorAll('.form__file-holder')
-		fileHolders.forEach((holder, index) => {
-			const deleteIcon = holder.querySelector('.delete-file')
-			if (fileHolders.length === 1) {
-				deleteIcon.style.display = 'none' // Ховаємо іконку, якщо блок один
-			} else {
-				deleteIcon.style.display = '' // Повертаємо іконку, якщо блоків більше одного
-			}
-		})
-	}
-
-	// Функція для обробки вибору файлу
-	document.body.addEventListener('change', e => {
-		if (e.target.classList.contains('wpcf7-file')) {
-			const fileInput = e.target
-			const fileName = fileInput.files[0]?.name || 'Select file to upload'
-			const fileLabel = fileInput.closest('.form__row--file').querySelector('.file-label')
-
-			// Обрізаємо назву файлу до 15 символів
-			fileLabel.textContent = fileName.length > 25 ? fileName.substring(0, 25) + '...' : fileName
-		}
-	})
-
-	// Додавання нового поля для завантаження файлу
-	const addButton = document.querySelector('.another-file')
-	addButton.addEventListener('click', () => {
-		const fileRow = document.querySelector('.form__row--file')
-		if (!fileRow) return // Перевірка, якщо немає жодного блоку
-
-		const newFileRow = fileRow.cloneNode(true) // Копіюємо існуючий елемент
-
-		// Очищуємо скопійований input та текст
-		const input = newFileRow.querySelector('.wpcf7-file')
-		input.value = ''
-		newFileRow.querySelector('.file-label').textContent = 'Select file to upload'
-
-		// Створюємо унікальний ID для нового поля і відповідної мітки
-		const uniqueId = `file-${Date.now()}`
-		input.id = uniqueId
-		newFileRow.querySelector('label').setAttribute('for', uniqueId)
-
-		// Додаємо скопійований елемент у розмітку
-		fileRow.parentNode.insertBefore(newFileRow, addButton.closest('.form__row'))
-
-		updateDeleteIcons() // Оновлюємо видимість іконок видалення
-	})
-
-	// Видалення блоку при кліку на "крестик"
-	document.body.addEventListener('click', e => {
-		if (e.target.classList.contains('delete-file')) {
-			const fileRow = e.target.closest('.form__row--file') // Знаходимо батьківський блок .form__row--file
-			if (fileRow) {
-				fileRow.remove() // Видаляємо блок .form__row--file
-				updateDeleteIcons() // Оновлюємо видимість іконок видалення
-			}
-		}
-	})
-
-	// Виклик функції для початкової перевірки
-	updateDeleteIcons()
 })

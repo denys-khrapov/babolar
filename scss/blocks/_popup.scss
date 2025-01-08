@@ -117,11 +117,11 @@
 			margin-bottom: 16px;
 		}
 
-		&--file {
-			>span {
-				display: none;
-			}
-		}
+		// &--file {
+		// 	>span {
+		// 		display: none;
+		// 	}
+		// }
 
 		&--another {
 			@media (min-width:$pc) {
@@ -244,9 +244,9 @@
 		}
 	}
 
-	input.hidden {
-		display: none;
-	}
+	// input.hidden {
+	// 	display: none;
+	// }
 
 	.actual-btn {
 		color: var(--colors-dark-brown-100);
@@ -350,15 +350,6 @@
 		font-weight: 300;
 		line-height: 1.55;
 	}
-
-	// .wpcf7-not-valid-tip,
-	// .wpcf7-response-output {
-	// 	display: none;
-	// }
-
-	// input.wpcf7-not-valid {
-	// 	border-color: red;
-	// }
 
 }
 

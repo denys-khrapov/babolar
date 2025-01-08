@@ -1,6 +1,12 @@
 .footer {
 	padding: 64px 0 16px;
 
+	&--bg {
+		background: url("../img/background-projects.svg");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
 	&__container {
 		display: flex;
 		flex-direction: column;
@@ -167,6 +173,7 @@
 		}
 	}
 }
+
 
 .bottom-footer {
 	.menu {

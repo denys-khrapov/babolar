@@ -618,10 +618,6 @@ html.dark-theme .logo-white {
   .info-block__container {
     gap: 124px;
   }
-  .info-block__container::after {
-    width: calc(100% - 144px);
-    left: 72px;
-  }
 }
 .info-block__left-col {
   min-width: 216px;
